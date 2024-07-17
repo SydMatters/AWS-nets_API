@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "3ae95cd2-0592-4eff-be92-cb87ee1fa678",
+		"name": "crud-nest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36729210"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "RegisterUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Ade\",\n    \"lastName\": \"Aq\",\n    \"age\": 23,\n    \"email\": \"sss@gmail.com\",\n    \"username\": \"aaa\",\n    \"password\": \"pass\",\n    \"role\": \"BASIC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/users/register"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "codrr_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiI3NGI4MTYxOS0xYmI5LTQ5OGEtYjBhMC1lYWUyNmQwNzA5NzkiLCJpYXQiOjE3MjEwMjM1ODAsImV4cCI6MTcyMTAyNzE4MH0.tVaKmsJFgOEJAO7Swu8hmotO2NKks89wF_QGpewWves",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8000/api/users/all"
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2577c65f-45cb-4355-aaa7-4e0c512093d8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"asd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/edit/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2577c65f-45cb-4355-aaa7-4e0c512093d8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "codrr_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiIwZmQxOGQ1My03ZDYxLTRjZmItODM2YS1lNmQ5ZGVkMTlkMmMiLCJpYXQiOjE3MjEwMjI2OTQsImV4cCI6MTcyMTAyNjI5NH0.cNxoO4oDUykud5KAIpeFCq9NjFYO-HCs-VBRXFQIO0Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/users/delete/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "fbad8dcc-936c-4722-81cb-e3a222718c52"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddToProject",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "codrr_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiIwZmQxOGQ1My03ZDYxLTRjZmItODM2YS1lNmQ5ZGVkMTlkMmMiLCJpYXQiOjE3MjEwMjA1NzEsImV4cCI6MTcyMTAyNDE3MX0.O4vUE_-UcUExTbW7awM2D5R5yHNOgAPSiGUW3zb1Zx0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"0fd18d53-7d61-4cfb-836a-e6d9ded19d2c\",\n    \"accessLevel\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/add-to-project/:projectId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"add-to-project",
+								":projectId"
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "93894701-fbd7-4546-96b8-42e9bce96a93"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "project",
+			"item": [
+				{
+					"name": "Create project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "codrr_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQkFTSUMiLCJzdWIiOiIwOTYzNjhkYy1hZmU3LTQ1NjctOTlmOC1hMzk0ZjdiMzg5MWEiLCJpYXQiOjE3MjEwMjM4NTgsImV4cCI6MTcyMTAyNzQ1OH0.9HceYa_6sAkQo3mMRubMG2KDo8VWz4zKvovDNOqhpL4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"asd\",\n    \"description\": \"Proyecto 123456789\",\n    \"duration\": 1234,\n    \"state\": \"pending\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/projects/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Find all projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "codrr_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiIxMDExMjgyOS1iNDIxLTRhNDItYjA0Ni1iNjI0ZTM3NWE0NDkiLCJpYXQiOjE3MjEwMjM4OTEsImV4cCI6MTcyMTAyNzQ5MX0.3eSpMThni3S88jLPvRwsAXoVATM3B9vkkmg-5knpfUs",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8000/api/projects/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Find project by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "codrr_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJmMTUzMDMwZi05MGZhLTRhMjgtODg5Yy03MDg1ZDNhMDYwNTUiLCJpYXQiOjE3MjEwMTY5ODksImV4cCI6MTcyMTAyMDU4OX0.Zg4xHQqGPUfxRKOdlO88MGm9OA3RYSYlQEaxCSjRfZI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/projects/:projectId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								":projectId"
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "a0b71a28-f7d3-41bf-823c-3d6ff3e62ace"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "codrr_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJmMTUzMDMwZi05MGZhLTRhMjgtODg5Yy03MDg1ZDNhMDYwNTUiLCJpYXQiOjE3MjEwMTY5ODksImV4cCI6MTcyMTAyMDU4OX0.Zg4xHQqGPUfxRKOdlO88MGm9OA3RYSYlQEaxCSjRfZI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Test 23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/projects/edit/:projectId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"edit",
+								":projectId"
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "a0b71a28-f7d3-41bf-823c-3d6ff3e62ace"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete project",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "codrr_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQkFTSUMiLCJzdWIiOiJhMmM3MDA3Ni0yOTNkLTQwMzItOWIxMS02NmZjZWQ4YzJiNzciLCJpYXQiOjE3MjEwMjE5NzIsImV4cCI6MTcyMTAyNTU3Mn0.sKKFCEGE17SCDIfdvGtBmQNpIfs-qjpzhvCrsyxOXUE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/projects/delete/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "770f8e8c-b8a0-495d-8218-402d9d097eed"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"zzz\",\n    \"password\": \"pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
